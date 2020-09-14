@@ -76,7 +76,7 @@ function App() {
   }, []);
 
   return (
-    <>
+    <div className='App'>
     <Nav setRunning={setRunning} running={running} runningRef={runningRef} runSimulation={runSimulation} setGrid={setGrid} 
     generateEmptyGrid={generateEmptyGrid} numCols={numCols} numRows={numRows} setSimulationSpeed={setSimulationSpeed} />
 
@@ -104,7 +104,7 @@ function App() {
             )
         })))}
       </div>
-    </>
+    </div>
   );
 }
 
