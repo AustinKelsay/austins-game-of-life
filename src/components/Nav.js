@@ -7,8 +7,8 @@ const Nav = (props) => {
     return(
         <div className='nav'>
             <h1 className='header'>Austin's game of life</h1>
-            <div className='frame'>
-                  <button class="custom-btn btn-3"
+            <div className='button-container'>
+                  <button className="glow-on-hover"
                     onClick={() => {
                         props.setRunning(!props.running)
                         if(!props.running) {
@@ -19,7 +19,7 @@ const Nav = (props) => {
                         {props.running ? 'stop' : 'start'}
                     </button>
 
-                    <button class="custom-btn btn-3"
+                    <button className="glow-on-hover"
                     onClick={() => {
                         props.setGrid(props.generateEmptyGrid())
                     }}
@@ -27,7 +27,7 @@ const Nav = (props) => {
                         clear
                     </button>
 
-                    <button class="custom-btn btn-3"
+                    <button className="glow-on-hover"
                     onClick={() => {
                         const rows = [];
                         for (let i = 0; i < props.numRows; i++) {
@@ -41,11 +41,11 @@ const Nav = (props) => {
                         random
                     </button>
 
-                    <button class="custom-btn btn-3" onClick={() => props.setSimulationSpeed(1200)}>Slow</button>
-                    <button class="custom-btn btn-3" onClick={() => props.setSimulationSpeed(600)}>Medium</button>
-                    <button class="custom-btn btn-3" onClick={() => props.setSimulationSpeed(200)}>Fast</button>
+                    <button className="glow-on-hover" onClick={() => props.setSimulationSpeed(1200)}>Slow</button>
+                    <button className="glow-on-hover" onClick={() => props.setSimulationSpeed(600)}>Medium</button>
+                    <button className="glow-on-hover" onClick={() => props.setSimulationSpeed(200)}>Fast</button>
 
-                <button class="custom-btn btn-3" 
+                <button className="glow-on-hover" 
                     onClick={() => {
                         if(!props.running) {
                             props.setSimulationSpeed(1)

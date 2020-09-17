@@ -76,14 +76,11 @@ function App() {
   }, []);
 
   return (
-    <div className='App'>
-    <Nav setRunning={setRunning} running={running} runningRef={runningRef} runSimulation={runSimulation} setGrid={setGrid} 
-    generateEmptyGrid={generateEmptyGrid} numCols={numCols} numRows={numRows} setSimulationSpeed={setSimulationSpeed} />
-
-      <div style={{
+    <div className="App">
+      <div className='grid' style={{
         display: 'grid',
         gridTemplateColumns: `repeat(${numCols}, 20px)`
-      }} className="App">
+      }}>
         {grid.map(((rows, i) => 
           rows.map((col, k) => {
             return (
@@ -104,6 +101,8 @@ function App() {
             )
         })))}
       </div>
+      <Nav setRunning={setRunning} running={running} runningRef={runningRef} runSimulation={runSimulation} setGrid={setGrid} 
+    generateEmptyGrid={generateEmptyGrid} numCols={numCols} numRows={numRows} setSimulationSpeed={setSimulationSpeed} />
     </div>
   );
 }
