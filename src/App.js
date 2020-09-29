@@ -27,6 +27,7 @@ const generateEmptyGrid = () => {
 };
 
 function App() {
+  const [count, setCount] = useState(0)
   const [grid, setGrid] = useState(() => {
     return generateEmptyGrid();
   });
@@ -40,7 +41,13 @@ function App() {
   const runningRef = useRef(running);
   runningRef.current = running
 
+  useEffect(() => {
+    setCount(count+1)
+  }, [grid])
+
+
   const runSimulation = useCallback(() => {
+    
 
     if (!runningRef.current) {
       return;
@@ -102,7 +109,7 @@ function App() {
         })))}
       </div>
       <Nav setRunning={setRunning} running={running} runningRef={runningRef} runSimulation={runSimulation} setGrid={setGrid} 
-    generateEmptyGrid={generateEmptyGrid} numCols={numCols} numRows={numRows} setSimulationSpeed={setSimulationSpeed} />
+    generateEmptyGrid={generateEmptyGrid} numCols={numCols} numRows={numRows} setSimulationSpeed={setSimulationSpeed} count={count} setCount={setCount}/>
     </div>
   );
 }

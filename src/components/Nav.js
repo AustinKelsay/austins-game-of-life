@@ -53,6 +53,17 @@ const Nav = (props) => {
                             props.runSimulation()
                         }
                     }}>Step</button>
+                    <p>Generation count: {props.count}</p>
+                    <p>At the heart of this game are four rules that determine if a cell is live or dead. All depend on how many of that cell's neighbors are alive.
+                        <br />
+                        Births: Each dead cell adjacent to exactly three live neighbors will become live in the next generation.
+                        <br />
+                        Death by isolation: Each live cell with one or fewer live neighbors will die in the next generation.
+                        <br />
+                        Death by overcrowding: Each live cell with four or more live neighbors will die in the next generation.
+                        <br />
+                        Survival: Each live cell with either two or three live neighbors will remain alive for the next generation.
+                        </p>
 
             </div>
         </div>
