@@ -22,6 +22,7 @@ const Nav = (props) => {
                     <button className="glow-on-hover"
                     onClick={() => {
                         props.setGrid(props.generateEmptyGrid())
+                        props.setCount(0)
                     }}
                     >
                         clear
